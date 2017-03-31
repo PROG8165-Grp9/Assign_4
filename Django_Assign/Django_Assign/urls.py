@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.conf.urls import include, url
-from django.contrib import admin
+#from django.conf.urls import include, url
+#from django.contrib import admin
 
 from myTrans import views
 
 urlpatterns = [
     #url(r'^$', views.userID, name='index'),
-    url(r'^item/(?P<id>\d+)', views.User_Log(), name='User_Log'),
-    url(r'^admin/', include(admin.site.urls)),
+    #url(r'^item/(?P<id>\d+)', views.User_Log(), name='User_Log'),
+    #url(r'^admin/', include(admin.site.urls)),
 ]
