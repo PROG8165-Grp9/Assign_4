@@ -24,4 +24,5 @@ urlpatterns = [
     #url(r'^$', views.userID, name='index'),
     #url(r'^item/(?P<id>\d+)', views.User_Log(), name='User_Log'),
     #url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
 ]
