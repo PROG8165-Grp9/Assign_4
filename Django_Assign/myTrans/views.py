@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404
 from django.http import HttpResponse
+from myTrans import forms
 
 from myTrans.models import Users
 
@@ -13,7 +14,7 @@ def myTrans(request):
 
 def User_Log(request, username):
     users = Users.objects
-    return render(request, 'myTrans/Directory.html')
+
     #try:
     #    UserId = Users.objects.get(Username=username)
     #except Users.DoesNotExist:
