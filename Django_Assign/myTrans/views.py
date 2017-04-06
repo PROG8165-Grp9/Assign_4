@@ -4,13 +4,18 @@ from django.http import HttpResponse
 from myTrans import forms
 
 from myTrans.models import Users
+from myTrans.models import Transactions
 
 # Create your views here.
 
 def myTrans(request):
-    users = Users.objects
-    return render(request,'myTrans/LogIn.html')
+    #users = Users.objects
+    #return render(request,'myTrans/LogIn.html')
     #return HttpResponse('<p>In index view</p>')
+    Transac = Transactions.objects.exclude(Trans_Amnt=0)
+    return render(request, 'myTrans/Directory.html', {
+        'trans': Transac,
+    })
 
 def User_Log(request, username):
     users = Users.objects
@@ -22,3 +27,9 @@ def User_Log(request, username):
     #return render(request, 'myTrans/Directory.html',{
     #    'user':Users.Username
     #})
+
+def DashBoard_Load(request):
+    Transac = Transaction.objects.exclude(Trans_Amnt=0)
+    return render(request, 'myTrans/Directory.html', {
+        'trans': Transac,
+    })
