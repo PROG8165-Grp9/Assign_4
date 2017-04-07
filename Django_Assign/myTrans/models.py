@@ -11,4 +11,3 @@ class Transaction(models.Model):
     Trans_Date = models.DateTimeField()
     Trans_Type = models.CharField(max_length=50)
     Trans_Loc = models.CharField(max_length=150)
-    Trans_Amnt = models.DecimalField
