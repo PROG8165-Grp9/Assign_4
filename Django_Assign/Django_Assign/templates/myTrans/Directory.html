@@ -40,50 +40,32 @@
                 <th title="Transaction Month" data-type="date">Transaction Month</th>
                 <th title="Type" data-type="string">Type</th>
                 <th title="Location" data-type="string">Location</th>
+                  <th title="Amount" data-type="string">Amount</th>
               </tr>
-            {% for Transactions in Transac %}
+            </thead>
+            <tbody>
+            {% for item in items%}
                 <tr>
                     <td>
-                        <a href="{% url 'TransacDetails' item.id %}">
-                            {{ Transactions.id|capfirst }}
-                        </a>
+                        {{ item.id|capfirst }}
                     </td>
                     <td>
-                        {{ Transactions.Trans_Desc|capfirst }}
+                        {{ item.Trans_Desc|capfirst }}
                     </td>
                     <td>
-                        {{ Transactions.Trans_Date|capfirst }}
+                        {{ item.Trans_Date|capfirst }}
                     </td>
                     <td>
-                        {{ Transactions.Trans_Type|capfirst }}
+                        {{ item.Trans_Type|capfirst }}
+                    </td>
+                     <td>
+                        {{ item.Trans_Loc|capfirst }}
                     </td>
                     <td>
-                        {{ Transactions.Trans_Amnt|capfirst }}
+                        {{ item.Trans_Amnt|capfirst }}
                     </td>
                 </tr>
             {% endfor %}
-            </thead>
-            <tbody>
-            {% for item in items %}
-				<tr>
-                    <td><a href="{% url 'item_detail' item.id %}">
-                        {{ item.title|capfirst }}
-                     </a>
-                    </td>
-                    <td>
-                        {{ item.Trans_Desc }}
-                    </td>
-                    <td>
-                        {{ item.Trans_Date }}
-                    </td>
-                    <td>
-                        {{ item.Trans_Type }}
-                    </td>
-                    <td>
-                        {{ item.Trans_Loc }}
-                    </td>
-                </tr>
-            {%endfor%}
             </tbody>
           </table>
         </div>
@@ -91,7 +73,6 @@
 
         </div>
     </form>
-<<<<<<< HEAD
     <!--<script type="text/javascript" src={% static 'js/Add_Transactions.js' %}></script>-->
     <script type="text/javascript" src={% static 'js/jquery-1.12.4.js' %}></script>
     <script type="text/javascript" src={% static 'js/jquery.dataTables.min.js' %}></script>
@@ -99,15 +80,5 @@
     <!--<script type="text/javascript" src={% static 'js/Dir_JS.js' %}></script>-->
     <script type="text/javascript" src={% static 'js/HeaderScript.js' %}></script>
     <script type="text/javascript" src={% static 'js/sort_JS.js' %}></script>
-=======
-    <!--<script type="text/javascript" src={% static 'js/Add_Transactions.js' %}></script>
-    <script type="text/javascript" src={% static 'js/Dir_JS.js' %}></script>
-    <script type="text/javascript" src={% static 'js/HeaderScript.js' %}></script>
-    <script type="text/javascript" src={% static 'js/sort_JS.js' %}></script>-->
-    <script type="text/javascript" src={% static 'js/jquery-1.12.4.js' %}></script>
-    <script type="text/javascript" src={% static 'js/jquery.dataTables.min.js' %}></script>
-    <script type="text/javascript" src={% static 'js/dataTables.bootstrap.min.js' %}></script>
-
->>>>>>> b335842f8aac28ab4af9a9c50ac8701c37e431df
 </body>
 </html>
