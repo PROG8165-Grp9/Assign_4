@@ -41,6 +41,27 @@
                 <th title="Type" data-type="string">Type</th>
                 <th title="Location" data-type="string">Location</th>
               </tr>
+            {% for Transactions in Transac %}
+                <tr>
+                    <td>
+                        <a href="{% url 'TransacDetails' item.id %}">
+                            {{ Transactions.id|capfirst }}
+                        </a>
+                    </td>
+                    <td>
+                        {{ Transactions.Trans_Desc|capfirst }}
+                    </td>
+                    <td>
+                        {{ Transactions.Trans_Date|capfirst }}
+                    </td>
+                    <td>
+                        {{ Transactions.Trans_Type|capfirst }}
+                    </td>
+                    <td>
+                        {{ Transactions.Trans_Amnt|capfirst }}
+                    </td>
+                </tr>
+            {% endfor %}
             </thead>
             <tbody>
             {% for item in items %}
@@ -70,6 +91,7 @@
 
         </div>
     </form>
+<<<<<<< HEAD
     <!--<script type="text/javascript" src={% static 'js/Add_Transactions.js' %}></script>-->
     <script type="text/javascript" src={% static 'js/jquery-1.12.4.js' %}></script>
     <script type="text/javascript" src={% static 'js/jquery.dataTables.min.js' %}></script>
@@ -77,5 +99,15 @@
     <!--<script type="text/javascript" src={% static 'js/Dir_JS.js' %}></script>-->
     <script type="text/javascript" src={% static 'js/HeaderScript.js' %}></script>
     <script type="text/javascript" src={% static 'js/sort_JS.js' %}></script>
+=======
+    <!--<script type="text/javascript" src={% static 'js/Add_Transactions.js' %}></script>
+    <script type="text/javascript" src={% static 'js/Dir_JS.js' %}></script>
+    <script type="text/javascript" src={% static 'js/HeaderScript.js' %}></script>
+    <script type="text/javascript" src={% static 'js/sort_JS.js' %}></script>-->
+    <script type="text/javascript" src={% static 'js/jquery-1.12.4.js' %}></script>
+    <script type="text/javascript" src={% static 'js/jquery.dataTables.min.js' %}></script>
+    <script type="text/javascript" src={% static 'js/dataTables.bootstrap.min.js' %}></script>
+
+>>>>>>> b335842f8aac28ab4af9a9c50ac8701c37e431df
 </body>
 </html>

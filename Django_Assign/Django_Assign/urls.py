@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^$', views.myTrans, name='myTrans'),
     url(r'^dashboard$', views.loadItems, name='loadItems'),
     #url(r'^item/(?P<id>\d+)', views.User_Log(), name='User_Log'),
-    url(r'^$', views.User_Log, name='User_Log'),
+    url(r'^user/$', views.User_Log, name='User_Log'),
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^admin/', admin.site.urls),
 ]
