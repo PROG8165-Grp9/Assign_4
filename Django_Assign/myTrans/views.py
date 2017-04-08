@@ -1,32 +1,29 @@
-from django.shortcuts import render
-from django.http import Http404
-from django.http import HttpResponse
-from myTrans import forms
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
 
-from myTrans.models import Users
 from myTrans.models import Transactions
-
+from myTrans.forms import UserForm
 # Create your views here.
-
-def myTrans(request):
-    users = Users.objects
-    return render(request,'myTrans/LogIn.html')
-    return HttpResponse('<p>In index view</p>')
-
-def User_Log(request, username):
-    users = Users.objects
-
-    try:
-        UserId = Users.objects.get(Username=username)
-    except Users.DoesNotExist:
-        raise Http404('User Does Not Exist')
-    return render(request, 'myTrans/Directory.html',{
-       'user':Users.Username
-    })
 
 def loadItems(request):
     items = Transactions.objects.exclude(Trans_Amnt=0)
     return render(request,'myTrans/Directory.html', {
         'items': items,
-    })
+})
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('loadItems')
+    else:
+        form = UserForm()
+    return render(request, 'myTrans/SignUp.html', {'form': form})
 

@@ -20,7 +20,7 @@
 
                 <!--<form action="Directory.html" method="get" target="_self" id="logIn">-->
                 <form autocomplete="off"
-                      method="post" action="Directory.html" onSubmit="return validate(this);" name="form" target="_self" id="logIn">
+                      method="post" action="{% url 'login' %}" onSubmit="return validate(this);" name="form" target="_self" id="logIn">
 
 
 				<div id="form_login_group">
@@ -36,7 +36,8 @@
                 <div id="form_login_group">
                     <button type="submit" id="log_In" class="btn btn-primary btn-large btn-block">Log in</button>
 				</div>
-                    <a id="register" class="btn btn-primary btn-large btn-block" href="SignUp.html">Sign Up</a>
+                    {% csrf_token %}
+                    <a id="register" class="btn btn-primary btn-large btn-block" href="{% url 'signup' %}">Sign Up</a>
                 </form>
 			</div>
             </div>

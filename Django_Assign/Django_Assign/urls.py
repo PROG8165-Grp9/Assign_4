@@ -15,14 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
+from django.views.generic.edit import CreateView
+from django.contrib.auth.forms import UserCreationForm
 
 from myTrans import views
 
 urlpatterns = [
-    url(r'^$', views.myTrans, name='myTrans'),
+    url(r'^login/$', auth_views.login, {'template_name': 'myTrans/LogIn.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout, {'template_name': 'myTrans/LogIn.html'}, name='logout'),
+    url(r'^signup/$', views.signup, name='signup'),
     url(r'^dashboard$', views.loadItems, name='loadItems'),
-    #url(r'^item/(?P<id>\d+)', views.User_Log(), name='User_Log'),
-    url(r'^user/$', views.User_Log, name='User_Log'),
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^admin/', admin.site.urls),
 ]
+

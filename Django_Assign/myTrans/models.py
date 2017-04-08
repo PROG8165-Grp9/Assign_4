@@ -1,10 +1,7 @@
 from django.db import models
 
 # Create your tables
-class Users(models.Model):
-    Username = models.CharField(max_length=200)
-    Password = models.CharField(max_length=16)
-    Email = models.CharField(max_length=200)
+
 
 class Transactions(models.Model):
     Trans_Desc = models.TextField()

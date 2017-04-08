@@ -17,55 +17,18 @@
             <h1 class="text-center">Sign up page</h1>
 
 
-                <form action="LogIn.html" name="registration" method="get" target="_self" id="signUp_form" onsubmit="return (validateForm(this));">
-
+                <form name="registration" method="POST" target="_self" id="signUp_form" onsubmit="return (validateForm(this));">
                     <div class="form-group">
-
-                        <label for="formEmail">Enter your email:</label>
-                        <input type="text" name ="email" class="form-control login-field" id="form_email" placeholder="Email" required>
-                        <label id="emailLable"></label>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label for="formFName">First name:</label>
-                        <input type="text" name ="fname" class="form-control" id="form_username" placeholder="First name" required>
-                        <label id="fnameLable"></label>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label for="formLName">Last name:</label>
-                        <input type="text" name ="lname" class="form-control" id="form_username" placeholder="Last name" required>
-                        <label id="lnameLable"></label>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label for="formUsername">Enter your username:</label>
-                        <input type="text" name ="username" class="form-control" id="form_username" placeholder="Username" required>
-                        <label id="usernameLable"></label>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label for="formPassword">Enter your password:</label>
-                        <input type="password" name ="password" class="form-control" id="form_password" placeholder="Password" required>
-                        <label id="passwordLable"></label>
-
-                    </div>
-
-                    <div class="form-group text-center">
+                        {% csrf_token %}
+                        {% load widget_tweaks %}
+                        {{ form.as_p }}
+                        {{ registration.username |add_class:"form-control"}}
+                        {{ registration.email |add_class:"form-control"}}
+                        {{ registration.password1 |add_class:"form-control" }}
+                        {{ registration.password2 |add_class:"form-control" }}
+                        </div>
 
                         <button type="submit" class="btn btn-primary btn-lg btn-block login-button" id="sign_Up">Sign Up</button>
-
-                    </div>
-
-
                 </form>
 
 
