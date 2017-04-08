@@ -12,5 +12,5 @@ class Transactions(models.Model):
 
 
 class Category(models.Model):
-    Cate_Type = models.CharField(max_length=100)
-    Cate_Desc = models.SlugField(max_length=100)
+    Cate_Type = models.CharField(max_length=50)
+    Cate_Desc = models.TextField()

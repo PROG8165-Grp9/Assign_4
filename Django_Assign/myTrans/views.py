@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 
 from myTrans.models import Transactions
+from myTrans.models import Category
 from myTrans.forms import UserForm
 # Create your views here.
 
@@ -29,6 +30,7 @@ def signup(request):
 
 
 def loadCategory(request):
-    return render(request,'myTrans/Category.html')
-
-
+    items = Category.objects.exclude()
+    return render(request,'myTrans/Category.html', {
+        'items': items,
+    })
