@@ -27,3 +27,8 @@ def signup(request):
         form = UserForm()
     return render(request, 'myTrans/SignUp.html', {'form': form})
 
+
+def loadCategory(request):
+    return render(request,'myTrans/Category.html')
+
+

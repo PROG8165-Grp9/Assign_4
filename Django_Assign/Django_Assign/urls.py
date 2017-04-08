@@ -22,10 +22,11 @@ from django.contrib.auth.forms import UserCreationForm
 from myTrans import views
 
 urlpatterns = [
-    url(r'^login/$', auth_views.login, {'template_name': 'myTrans/LogIn.html'}, name='login'),
+    url(r'^$', auth_views.login, {'template_name': 'myTrans/LogIn.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name': 'myTrans/LogIn.html'}, name='logout'),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^dashboard$', views.loadItems, name='loadItems'),
+    url(r'^category/$', views.loadCategory, name='category'),
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^admin/', admin.site.urls),
 ]
