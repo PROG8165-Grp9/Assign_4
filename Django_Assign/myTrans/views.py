@@ -34,3 +34,5 @@ def loadCategory(request):
     return render(request,'myTrans/Category.html', {
         'items': items,
     })
+def newTransaction(request):
+    return render(request,'myTrans/NewTransaction.html')

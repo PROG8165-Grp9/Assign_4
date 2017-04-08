@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^dashboard$', views.loadItems, name='loadItems'),
     url(r'^category/$', views.loadCategory, name='category'),
+    url(r'^addTrans/$', views.newTransaction, name='addTrans'),
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^admin/', admin.site.urls),
 ]
