@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/StyleSheet.css' %}" type = "text/css"/>
+    <link rel="stylesheet" href="{% static 'Bootstrap/css/bootstrap.min.css' %}" type = "text/css"/>
+    <title></title>
+</head>
+<body>
+		<!-- header -->
+        <div id="dash_header" class="container">
+            <section class="headerStyle">
+            	<h1 class="logoStyle">MyTrans</h1>
+            </section>
+            <aside class="asideStyle">
+                <a href="{% url 'loadItems' %}" class="btn btn-default-header">Dashboard</a>
+                <button type="button" class="btn btn-default-header">New Transaction</button>
+                <a href="{% url 'category' %}" class="btn btn-default-header">New Additional Category</a>
+                <a href="{% url 'logout' %}" class="btn btn-default-header">Log Out</a>
+            </aside>
+
+            </aside>
+        </div>
+        <hr>
+		<!-- End header -->
+        <!-- Display list -->
+		<form target="_self">
+
+            <div class="container">
+              <h3>Category List</h3>
+
+            </div>
+
+        </form>
+		
+		
+		
+		
+		
+		
+	
+        <script type="text/javascript" src={% static 'js/HeaderScript.js' %}></script>
+        <script type="text/javascript" src={% static 'js/Add_Transactions.js' %}></script>
+        <script type="text/javascript" src={% static 'js/AddNewTrans.js' %}></script>
+	    <script type="text/javascript" src={% static 'js/jquery-1.12.4.js' %}></script>
+        <script type="text/javascript" src={% static 'js/jquery.dataTables.min.js' %}></script>
+
+
+</body>
+</html>
