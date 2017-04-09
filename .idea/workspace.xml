@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="025b774e-158e-46f6-a29f-fd353f4e18c1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Django_Assign/Django_Assign/settings.py" afterPath="$PROJECT_DIR$/Django_Assign/Django_Assign/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Django_Assign/Django_Assign/templates/myTrans/Directory.html" afterPath="$PROJECT_DIR$/Django_Assign/Django_Assign/templates/myTrans/Directory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Django_Assign/Django_Assign/templates/myTrans/LogIn.html" afterPath="$PROJECT_DIR$/Django_Assign/Django_Assign/templates/myTrans/LogIn.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Django_Assign/Django_Assign/templates/myTrans/SignUp.html" afterPath="$PROJECT_DIR$/Django_Assign/Django_Assign/templates/myTrans/SignUp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Django_Assign/Django_Assign/urls.py" afterPath="$PROJECT_DIR$/Django_Assign/Django_Assign/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Django_Assign/db.sqlite3" afterPath="$PROJECT_DIR$/Django_Assign/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Django_Assign/myTrans/admin.py" afterPath="$PROJECT_DIR$/Django_Assign/myTrans/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Django_Assign/myTrans/forms.py" afterPath="$PROJECT_DIR$/Django_Assign/myTrans/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Django_Assign/myTrans/models.py" afterPath="$PROJECT_DIR$/Django_Assign/myTrans/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Django_Assign/myTrans/views.py" afterPath="$PROJECT_DIR$/Django_Assign/myTrans/views.py" />
-    </list>
+    <list default="true" id="025b774e-158e-46f6-a29f-fd353f4e18c1" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
