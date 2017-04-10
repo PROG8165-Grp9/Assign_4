@@ -50,8 +50,9 @@
                     <td class="table_Lbl"><label>Type:</label></td>
                     <td>
                     	<select class="form-control">
-                        	<option value="Deposit">Deposit</option>
-                        	<option value="Withdraw">Withdrawal</option>
+                            {% for cat in cats %}
+                                <option>{{ cat.Cate_Type }}</option>
+                            {% endfor %}
                         </select>
                     </td>
                 </tr>

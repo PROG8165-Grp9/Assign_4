@@ -53,4 +53,7 @@ def categoryView(request):
 
 
 def newTransaction(request):
-    return render(request,'myTrans/NewTransaction.html')
+    cats = Category.objects.exclude()
+    return render(request,'myTrans/NewTransaction.html',{
+        'cats': cats,
+    })
