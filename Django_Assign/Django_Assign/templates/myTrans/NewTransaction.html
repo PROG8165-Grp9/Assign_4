@@ -22,7 +22,8 @@
             </aside>
         </div>
         <hr>
-        <form  action="Directory.html"  method="get" name="Transaction" target="_self"onsubmit="return(validateTransForm(this));">
+        <form  action=""  method="post" name="Transaction" target="_self"onsubmit="return(validateTransForm(this));">
+               {% csrf_token %}
         <div class="container">
             <div id="title">Trasaction Details</div>
             <br>
