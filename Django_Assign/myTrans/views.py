@@ -8,6 +8,7 @@ from myTrans.models import Transactions
 from myTrans.models import Category
 from myTrans.forms import UserForm
 from myTrans.forms import CategoryForm
+from myTrans.forms import AddTransForm
 # Create your views here.
 
 def loadItems(request):
@@ -54,21 +55,21 @@ def categoryView(request):
 
 
 def newTransaction(request):
-    cats = Category.objects.exclude()
     if request.method == 'POST':
         form = AddTransForm(request.POST)
         if form.is_valid():
-            form.sava()
-            tbxTransNo = form.cleaned_data.get('tbxTransNo')
-            Date = form.cleaned_data.get('Date')
-            Description = form.cleaned_data.get('Description')
-            Location = form.cleaned_data.get('Location')
-            Amount = form.cleaned_data('Amount')
-            form = AddTrans('tbxTransNo', 'Date', 'Description', 'Location', 'Amount')
-            return redirect('addTrans')
+            Trans_Desc = form.cleaned_data.get('Trans_Desc')
+            Trans_Date = form.cleaned_data.get('Trans_Date')
+            Trans_Type = form.cleaned_data.get('Trans_Type')
+            Trans_Loc = form.cleaned_data.get('Trans_Loc')
+            Trans_Amnt = form.cleaned_data.get('Trans_Amnt')
+            form = Transactions(Trans_Desc=Trans_Desc, Trans_Date=Trans_Date,
+                                Trans_Type=Trans_Type, Trans_Loc=Trans_Loc, Trans_Amnt=Trans_Amnt)
+            form.save()
+
+            return redirect('loadItems')
     else:
         form = AddTransForm()
     return render(request, 'myTrans/NewTransaction.html', {
-        'cats': cats,
         'form': form
     })

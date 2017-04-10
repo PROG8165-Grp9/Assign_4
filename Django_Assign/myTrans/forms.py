@@ -24,4 +24,4 @@ class CategoryForm (forms.ModelForm):
 class AddTransForm():
     class Meta:
         model = Transactions
-        fields=('tbxTransNo','Date','Description','Type','Location','Amount')
+        fields = ['Trans_Desc', 'Trans_Date', 'Trans_Type', 'Trans_Loc', 'Trans_Amnt', ]
