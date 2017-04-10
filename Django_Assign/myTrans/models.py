@@ -14,4 +14,3 @@ class Transactions(models.Model):
 class Category(models.Model):
     Cate_Type = models.CharField(max_length=50)
     Cate_Desc = models.TextField()
-
