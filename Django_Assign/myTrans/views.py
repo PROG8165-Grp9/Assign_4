@@ -63,13 +63,13 @@ def newTransaction(request):
             Trans_Type = form.cleaned_data.get('Trans_Type')
             Trans_Loc = form.cleaned_data.get('Trans_Loc')
             Trans_Amnt = form.cleaned_data.get('Trans_Amnt')
-            form = Transactions(Trans_Desc=Trans_Desc, Trans_Date=Trans_Date,
-                                Trans_Type=Trans_Type, Trans_Loc=Trans_Loc, Trans_Amnt=Trans_Amnt)
+            form = Transactions(Trans_Desc=Trans_Desc, Trans_Date=Trans_Date,Trans_Type=Trans_Type, Trans_Loc=Trans_Loc, Trans_Amnt=Trans_Amnt)
             form.save()
-
             return redirect('loadItems')
     else:
         form = AddTransForm()
+        cats = Category.objects.exclude()
+
     return render(request, 'myTrans/NewTransaction.html', {
-        'form': form
+        'cats': cats,
     })

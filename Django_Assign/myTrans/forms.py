@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Category
+from .models import Category, Transactions
 
 class UserForm(UserCreationForm):
     # to take the input of username
@@ -18,13 +18,11 @@ class UserForm(UserCreationForm):
 class CategoryForm (forms.ModelForm):
     class Meta:
         model = Category
-<<<<<<< HEAD
         fields = ['Cate_Type', 'Cate_Desc']
 
 class AddTransForm():
     class Meta:
         model = Transactions
         fields = ['Trans_Desc', 'Trans_Date', 'Trans_Type', 'Trans_Loc', 'Trans_Amnt', ]
-=======
-        fields = ['Cate_Type', 'Cate_Desc']
->>>>>>> parent of f72fa84... addtrans
+
+
