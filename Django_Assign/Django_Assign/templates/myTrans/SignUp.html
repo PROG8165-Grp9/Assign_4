@@ -19,13 +19,13 @@
 
                 <form name="registration" method="POST" target="_self" id="signUp_form" onsubmit="return (validateForm(this));">
                     <div class="form-group">
-                        {% csrf_token %}
                         {% load widget_tweaks %}
+                        {% csrf_token %}
                         {{ form.as_p }}
-                        {{ registration.username |add_class:"form-control"}}
-                        {{ registration.email |add_class:"form-control"}}
-                        {{ registration.password1 |add_class:"form-control" }}
-                        {{ registration.password2 |add_class:"form-control" }}
+                        {{ registration.username|add_class:"form-control"}}
+                        {{ registration.email|add_class:"form-control"}}
+                        {{ registration.password1|add_class:"form-control" }}
+                        {{ registration.password2|add_class:"form-control" }}
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-lg btn-block login-button" id="sign_Up">Sign Up</button>
