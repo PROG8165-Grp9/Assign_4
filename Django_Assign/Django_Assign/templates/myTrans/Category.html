@@ -17,10 +17,9 @@
             <aside class="asideStyle">
                 <a href="{% url 'loadItems' %}" class="btn btn-default-header">Dashboard</a>
                 <a href="{% url 'addTrans' %}" class="btn btn-default-header">New Transaction</a>
-                <a href="{% url 'category' %}" class="btn btn-default-header">New Additional Category</a>
+                <a href="{% url 'category' %}" class="btn btn-default-header">Category Details</a>
+                <a href="{% url 'addcategory' %}" class="btn btn-default-header">New Additional Category</a>
                 <a href="{% url 'logout' %}" class="btn btn-default-header">Log Out</a>
-            </aside>
-
             </aside>
         </div>
         <hr>
@@ -30,11 +29,10 @@
 		<form target="_self">
 
         <div class="container">
-          <h3>Category</h3>
+          <h3>Category Details</h3>
             <table class="table table-responsive table-hover" id="TransTable">
             <thead>
               <tr>
-                  <th title="No." data-type="number">ID</th>
                   <th title="Type" data-type="text">Type</th>
                   <th title="Description" data-type="text">Description</th>
               </tr>
@@ -43,20 +41,13 @@
              {% for item in items %}
                 <tr>
                     <td>
-                        {{item.id|capfirst }}
-                    </td>
-                    <td>
                         {{ item.Cate_Type|capfirst}}
                     </td>
                     <td>
                         {{ item.Cate_Desc|capfirst }}
                     </td>
-
-
                 </tr>
             {% endfor %}
-
-
             </tbody>
           </table>
         </div>
@@ -68,47 +59,10 @@
 	<hr>
 	<!-- END Display list -->
 
-	<!--Collapsible & Adding Form-->
-	<div class="container">
-		<a href="#demo" class="btn btn-info" data-toggle="collapse">Add New Category</a>
-			<div id="demo" class="collapse">
-					<form   target="_self">
-				<!--<div id="title">Category Add Section</div> -->
-					<br>
-					<table class="table table-responsive">
-						<tr>
-							<td class="table_Lbl"><label>Type:</label></td>
-							<td>
-								<input id="tbxCate" name="tbxCateType" class="form-control">
-							</td>
-						</tr
-						<tr>
-							<td class="table_Lbl"><label>Description:</label></td>
-							<td>
-								<input id="txtCateDesc"
-									type="text" class=" form-control"
-									minlength="1">
-									<label id="descrlabel"></label>
-							</td>
-						</tr>
 
-
-						<!-- Button -->
-						<tr>
-							<td>&nbsp;</td>
-							<td align="left">
-								<button type="submit" class="btn btn-default">Add Category</button >
-							</td>
-						</tr>
-					</table>
-				</div>
-			</form>
-		</div>
-	<!-- END Adding -->
 
         <script type="text/javascript" src={% static 'js/HeaderScript.js' %}></script>
         <script type="text/javascript" src={% static 'js/category.js' %}></script>
-		<script type="text/javascript" src={% static 'Bootstrap/js/jquery-3.2.0.min.js' %}></script>
 		<script type="text/javascript" src={% static 'Bootstrap/js/bootstrap.min.js' %}></script>
 
 

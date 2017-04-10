@@ -9,14 +9,15 @@
 </head>
 <body>
 
-        <div id="dash_header" class="container">
+       <div id="dash_header" class="container">
             <section class="headerStyle">
             	<h1 class="logoStyle">MyTrans</h1>
             </section>
             <aside class="asideStyle">
                 <a href="{% url 'loadItems' %}" class="btn btn-default-header">Dashboard</a>
                 <a href="{% url 'addTrans' %}" class="btn btn-default-header">New Transaction</a>
-                <a href="{% url 'category' %}" class="btn btn-default-header">New Additional Category</a>
+                <a href="{% url 'category' %}" class="btn btn-default-header">Category Details</a>
+                <a href="{% url 'addcategory' %}" class="btn btn-default-header">New Additional Category</a>
                 <a href="{% url 'logout' %}" class="btn btn-default-header">Log Out</a>
             </aside>
         </div>
