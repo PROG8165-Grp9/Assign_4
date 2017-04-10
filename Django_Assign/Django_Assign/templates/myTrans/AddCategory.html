@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/StyleSheet.css' %}" type = "text/css"/>
+    <link rel="stylesheet" href="{% static 'Bootstrap/css/bootstrap.min.css' %}" type = "text/css"/>
+    <title></title>
+</head>
+<body>
+		<!-- header -->
+       <div id="dash_header" class="container">
+            <section class="headerStyle">
+            	<h1 class="logoStyle">MyTrans</h1>
+            </section>
+            <aside class="asideStyle">
+                <a href="{% url 'loadItems' %}" class="btn btn-default-header">Dashboard</a>
+                <a href="{% url 'addTrans' %}" class="btn btn-default-header">New Transaction</a>
+                <a href="{% url 'category' %}" class="btn btn-default-header">Category Details</a>
+                <a href="{% url 'addcategory' %}" class="btn btn-default-header">New Additional Category</a>
+                <a href="{% url 'logout' %}" class="btn btn-default-header">Log Out</a>
+            </aside>
+        </div>
+        <hr>
+ <!-- End header -->
+
+			<form action="" method="post"  target="_self">{% csrf_token %}
+				<div class="container">
+				<div id="title">New Additional Category</div>
+					<br>
+					<table class="table table-responsive">
+						<tr>
+							<td class="table_Lbl"><label for="Cate_Type"> Category Type : </label></td>
+							<td>
+							<input  name="Cate_Type" type="text" class="form-control">	
+							</td>
+						</tr>
+						<tr>
+							<td class="table_Lbl"><label for="Cate_Desc"> Category Description : </label></td>
+							<td>
+								<input name="Cate_Desc"
+									type="text" class=" form-control"
+									minlength="1">
+							</td>
+						</tr>
+	
+						<tr>
+							<td>&nbsp;</td>
+							<td align="left">
+							<input type="submit" value="Submit" />
+							<!--	<button type="submit" class="btn btn-default">Add Category</button > -->
+							</td>
+						</tr>
+					</table>
+					</div>
+				</div>
+			</form>
+
+</body>
+</html>
