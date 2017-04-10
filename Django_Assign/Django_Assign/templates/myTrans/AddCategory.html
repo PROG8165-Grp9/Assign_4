@@ -16,8 +16,8 @@
             <aside class="asideStyle">
                 <a href="{% url 'loadItems' %}" class="btn btn-default-header">Dashboard</a>
                 <a href="{% url 'addTrans' %}" class="btn btn-default-header">New Transaction</a>
-                <a href="{% url 'category' %}" class="btn btn-default-header">Category Details</a>
-                <a href="{% url 'addcategory' %}" class="btn btn-default-header">New Additional Category</a>
+                <a href="{% url 'category' %}" class="btn btn-default-header">Category List</a>
+                <a href="{% url 'addcategory' %}" class="btn btn-default-header">New Additional Categories</a>
                 <a href="{% url 'logout' %}" class="btn btn-default-header">Log Out</a>
             </aside>
         </div>
@@ -26,17 +26,17 @@
 
 			<form action="" method="post"  target="_self">{% csrf_token %}
 				<div class="container">
-				<div id="title">New Additional Category</div>
+				<div id="title">New Additional Categories</div>
 					<br>
 					<table class="table table-responsive">
 						<tr>
-							<td class="table_Lbl"><label for="Cate_Type"> Category Type : </label></td>
+							<td class="table_Lbl"><label for="Cate_Type">  Type : </label></td>
 							<td>
 							<input  name="Cate_Type" type="text" class="form-control">	
 							</td>
 						</tr>
 						<tr>
-							<td class="table_Lbl"><label for="Cate_Desc"> Category Description : </label></td>
+							<td class="table_Lbl"><label for="Cate_Desc">  Description : </label></td>
 							<td>
 								<input name="Cate_Desc"
 									type="text" class=" form-control"

@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from myTrans.forms import AddTransForm
 
 from myTrans.models import Transactions
 from myTrans.models import Category
@@ -53,4 +54,21 @@ def categoryView(request):
 
 
 def newTransaction(request):
-    return render(request,'myTrans/NewTransaction.html')
+    cats = Category.objects.exclude()
+    if request.method == 'POST':
+        form = AddTransForm(request.POST)
+        if form.is_valid():
+            form.sava()
+            tbxTransNo = form.cleaned_data.get('tbxTransNo')
+            Date = form.cleaned_data.get('Date')
+            Description = form.cleaned_data.get('Description')
+            Location = form.cleaned_data.get('Location')
+            Amount = form.cleaned_data('Amount')
+            form = AddTrans('tbxTransNo', 'Date', 'Description', 'Location', 'Amount')
+            return redirect('addTrans')
+    else:
+        form = AddTransForm()
+    return render(request, 'myTrans/NewTransaction.html', {
+        'cats': cats,
+        'form': form
+    })
