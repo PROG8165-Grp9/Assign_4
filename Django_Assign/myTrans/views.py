@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from myTrans.models import Transactions
 from myTrans.models import Category
 from myTrans.forms import UserForm
+from myTrans.forms import CategoryForm
 # Create your views here.
 
 def loadItems(request):
@@ -34,5 +35,22 @@ def loadCategory(request):
     return render(request,'myTrans/Category.html', {
         'items': items,
     })
+
+
+def categoryView(request):
+    if request.method == 'POST':
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            Cate_Type = form.cleaned_data.get('Cate_Type')
+            Cate_Desc = form.cleaned_data.get('Cate_Desc')
+            form = Category(Cate_Type=Cate_Type, Cate_Desc=Cate_Desc)
+            form.save()
+            return redirect('category')
+    else:
+        form = CategoryForm()
+    return render(request, 'myTrans/AddCategory.html', {'form': form})
+
+
+
 def newTransaction(request):
     return render(request,'myTrans/NewTransaction.html')
