@@ -70,6 +70,4 @@ def newTransaction(request):
         form = AddTransForm()
         cats = Category.objects.exclude()
 
-    return render(request, 'myTrans/NewTransaction.html', {
-        'cats': cats,
-    })
+    return render(request, 'myTrans/NewTransaction.html', {'form': form, 'cats': cats})

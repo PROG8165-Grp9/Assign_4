@@ -20,7 +20,7 @@ class CategoryForm (forms.ModelForm):
         model = Category
         fields = ['Cate_Type', 'Cate_Desc']
 
-class AddTransForm():
+class AddTransForm (forms.ModelForm):
     class Meta:
         model = Transactions
         fields = ['Trans_Desc', 'Trans_Date', 'Trans_Type', 'Trans_Loc', 'Trans_Amnt', ]

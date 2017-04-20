@@ -24,69 +24,52 @@
         <form  method="POST" name="Transaction" target="_self">
             {% csrf_token %}
         <div class="container">
-            <div id="title">Trasaction Details</div>
+            <div id="title">Transaction Details</div>
             <br>
-            <table class="table table-responsive">
-
+           <table class="table table-responsive">
                 <tr>
-<<<<<<< HEAD
-                   <td class="table_Lbl"><label for="Trans_Date">Date (Month):</label></td>
-                    <td><input name="Trans_Date" type="date" class=" form-control date"></td>
-
-=======
-                    <td class="table_Lbl"><label>Date (Month):</label></td>
-                    <td><input id="tbxDate" type="date" class=" form-control date"></td>
->>>>>>> b478dfc5899645e455181448c48c71e513f0a732
+                    <td class="table_Lbl"><label for="Trans_Date">Date (Month):</label></td>
+                    <td><input name="Trans_Date" type="date" class=" form-control date">	</td>
                 </tr>
-
                 <tr>
                     <td class="table_Lbl"><label for="Trans_Desc">Description:</label></td>
-                    <td>
-                        <input id="txtaDesc" type="text" class=" form-control" minlength="10">
-                            <label id="descrlabel"></label>
-                    </td>
+                    <td><input name="Trans_Desc" type="text" class="form-control">	</td>
                 </tr>
-
                 <tr>
                     <td class="table_Lbl"><label for="Trans_Type">Type:</label></td>
-                    <td>
-                    	<select class="form-control">
+
+                  <td>
+
+                         <select name="Trans_Type" class="form-control">
                             {% for cat in cats %}
                                 <option>{{ cat.Cate_Type }}</option>
                             {% endfor %}
                         </select>
+
                     </td>
                 </tr>
-
                 <tr>
                     <td class="table_Lbl"><label for="Trans_Loc">Location:</label></td>
-                    <td><input name="Trans_Loc" class="form-control text" type="text"></td>
+                    <td><input name="Trans_Loc" type="text" class="form-control">	</td>
                 </tr>
-
                 <tr>
                     <td class="table_Lbl"><label for="Trans_Amnt">Amount:</label></td>
-                    <td>
-                    <span class="input-group-addon-1">$</span>
-
-                    <input id="tbxNAmount" class="table_TransDetails form-control currency" min="-10000" step="0.10" type="number" pattern="^\\?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?"
-                     data-number-to-fixed="2" max="10000">
-                     <label id="lblAmntErr">Amount can only be between CAD 10,000.00 to -10,000.00</label>
-                     </td>
+                    <td><input name="Trans_Amnt" type="text" class="form-control">	</td>
                 </tr>
 
-                <tr>
-                	<td>&nbsp;</td>
-                    <td align="left">
-                        <button type="submit" class="btn btn-default">Add Transaction</button>                        &nbsp;
-                        <button type="button" class="btn btn-default" onClick="goBack()">Back</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        </form>
-        <script type="text/javascript" src={% static 'js/HeaderScript.js' %}></script>
-        <script type="text/javascript" src={% static 'js/Add_Transactions.js' %}></script>
-        <script type="text/javascript" src={% static 'js/AddNewTrans.js' %}></script>
 
+							<td>&nbsp;</td>
+							<td align="left">
+							<input type="submit" value="Submit" />
+							<!--	<button type="submit" class="btn btn-default">Add Category</button > -->
+							</td>
+						</tr>
+					</table>
+				</div>
+			</form>
+			</div>
+		<script type="text/javascript" src={% static 'js/HeaderScript.js' %}></script>
+		<script type="text/javascript" src={% static 'Bootstrap/js/bootstrap.min.js' %}></script>
+        <script type="text/javascript" src={% static 'js/AddNewTrans.js' %}></script>   -->
 </body>
 </html>
